@@ -5,8 +5,10 @@
 // - see "Basic usage" section in README for an explanation
 // #############
 
-import { NFC } from '../index';
-import io from 'socket.io-client';
+var io = require('socket.io-client');
+
+// without Babel in ES2015
+const { NFC } = require('nfc-pcsc');
 
 const message = {
 	tag_uid:'',
@@ -46,6 +48,7 @@ nfc.on('reader', reader => {
 					socket.emit('item-added', uid);
 				} else {
 					console.log('Item has already been added: ' + uid);
+					socket.emit('item-already-added', uid);
 				}
 			}
 		}

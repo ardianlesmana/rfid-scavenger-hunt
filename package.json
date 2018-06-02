@@ -12,6 +12,7 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+    "nfc-pcsc": "^0.6.2",
     "node-json-db": "^0.7.5",
     "pug": "2.0.0-beta11",
     "random-puppy": "^1.1.0",
