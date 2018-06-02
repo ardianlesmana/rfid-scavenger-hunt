@@ -37,12 +37,16 @@ nfc.on('reader', reader => {
 		} else {
 			if(duds.includes(uid)) {
 				console.log('A Dud item has been scanned: ' + uid);
-				socket.emit('dud-added', uid);
 				message.duds.push(uid);
+				socket.emit('dud-added', uid);
 			} else {
-				console.log('Item has been scanned: ' + uid);
-				socket.emit('item-added', uid);
-				message.items.push(uid);
+				if(!message.items.includes(uid)) {
+					console.log('Item has been scanned: ' + uid);
+					message.items.push(uid);
+					socket.emit('item-added', uid);
+				} else {
+					console.log('Item has already been added: ' + uid);
+				}
 			}
 		}
 		
