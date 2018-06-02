@@ -1,0 +1,28 @@
+extends layout
+
+append scripts
+  script(src="/javascripts/index.js")
+  script(src="/javascripts/socket.io.js")
+block content
+  h1 [Yeny and Dave's Baby Shower] SCAVENGER HUNT 
+  h3 Rules
+  ul
+    li There are 30 items to be found
+    li All valid items are in living room and foyer area
+    li There are no valid items in kitchen area
+    li All valid items have white dot sticker on it 
+    li All valid items weigh less than 5 lbs
+    li All valid items can be carried with 1 hand
+    li All valid items are removable (not permanent fixtures) 
+    li Each valid item worth 1 pts
+    li To claim valid items and score points:
+       ul
+         li Bring items to scanning station
+         li Scan items first
+         li When finished, scan your user badge
+         li Items will be submitted and scores calculated
+    li If it is not in this rules list, it is legit
+
+  h3 Logs
+  textarea(id="loggingTA", style="width: 600px; min-height: 300px;")
+
